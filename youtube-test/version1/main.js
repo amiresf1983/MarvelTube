@@ -1,24 +1,37 @@
-$("document").ready(function () {
+$("document").ready(init);
+
+var video = ''
+
+var videos = $()
+
+function init() {
   var API_KEY = "AIzaSyBYuxS3gWRGJhvRH2pxLRJXODm9MPu8j_g";
 
-  $("#form").submit(function (event) {
+  $("#search-form").submit(function (event) {
     event.preventDefault();
-    alert("form");
+    console.log("form-group");
 
     var search = $("#search").val();
     videoSearch(API_KEY, search, 5);
   });
-  function videoSearch(key, search, maxResults) {
-    $.get(
-      "https:/www.googleapis.com/youtube/vs/search?key=" +
-        key +
-        "&type=video&part=snippet&maxResults=" +
-        maxResults +
-        "&q=" +
-        search,
-      function (data) {
-        console.log(data);
-      }
-    );
-  }
-});
+}
+//hoisting
+function videoSearch(key, search, maxResults) {
+  var url =
+    "https://www.googleapis.com/youtube/v3/search?key=" +
+    key +
+    "&type=video&part=snippet&maxResults=" +
+    maxResults +
+    "&q=" +
+    search;
+
+  $.get(url, function (data) {
+    console.log(data);
+  });
+}
+
+function display( )
+
+
+
+//network tab

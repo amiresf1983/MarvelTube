@@ -40,9 +40,7 @@
   <body>
     <div
       class="ui large three item top menu inverted transition visible"
-      style="display: flex !important; margin: 0;"
-      
-    >
+      style="display: flex !important; margin: 0;">
       <div class="ui container ">
         <div class="ui three column grid" style="width: 100%">
           <div class="row">
@@ -68,8 +66,8 @@
     </div>
     <div class="ui top menu transition inverted visible" style="margin: 0;">
       <div class="ui container" style="justify-content: center;">
-        <a class="item" href="/index.html">Home</a>    
-        <a class="item" href="/Character.html">Character</a>
+        <a class="item" href="/index.html">Home</a>
+            <a class="item" href="/Character.html">Character</a>
             <a class="item" href="/Movie.html">Movies</a>
             <a class="item" href="/Tv-show.html">Tv-Shows</a>
             <a class="item" href="/Game.html">Games</a>
@@ -81,29 +79,7 @@
       <div>
         <p
           style="
-            background-image: url('./assest/img/banner1.jpg');
-            height: 400px;
-            width: 100vw;
-            background-size: cover;
-            background-repeat: no-repeat;
-          "
-        ></p>
-      </div>
-      <div>
-        <p
-          style="
-            background-image: url('./assest/img/banner2.jpg');
-            height: 400px;
-            width: 100vw;
-            background-size: cover;
-            background-repeat: no-repeat;
-          "
-        ></p>
-      </div>
-      <div>
-        <p
-          style="
-            background-image: url('./assest/img/banner3.jpg');
+            background-image: url('./assest/img/banner/m-character.png');
             height: 400px;
             width: 100vw;
             background-size: cover;
@@ -112,89 +88,40 @@
         ></p>
       </div>
     </div>
-
+<h2>Feature</h2>
     <div class="ui container" style="margin-top: 60px">
-      <div class="ui four column grid">
+      <div class="ui three column grid">
         <div class="row">
           <div class="column">
             <div class="ui raised link card">
-              <a class="image" href="Character.html" alt="test">
-                <img src="./assest/img/character.png" />
-                <p class="ui center aligned">Character</p>
+              <a class="image" href="details.html" alt="test">
+                <img src="./assest/img/characters/dr-strange.jpg" />
+                
               </a>
+              <p class="ui center aligned">Dr Strange</p>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="ui raised link card">
+              <a class="image" href="details.html">
+                <img src="./assest/img/characters/the-amazing-spiderman.jpg" />
+                
+              </a>
+              <p class="ui center aligned">Peter Parker The Friendly Spiderman</p>
             </div>
           </div>
           <div class="column">
             <div class="ui raised link card">
-              <a class="image" href="Movie.html">
-                <img src="./assest/img/marvel-movies.png" />
-                <p class="ui center aligned">Movies</p>
+              <a class="image" href="details.html">
+                <img src="./assest/img/characters/wong.jpg" />
               </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="ui raised link card">
-              <a class="image" href="Tv-show.html">
-                <img src="./assest/img/tvshows.png" />
-                <p class="ui center aligned">Tv-Shows</p>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="ui raised link card">
-              <a class="image" href="Game.html">
-                <img src="./assest/img/games.png" />
-                <p class="ui center aligned">games</p>
-                <!-- copy size of 1.png -->
-              </a>
+              <p class="ui center aligned">Wong</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div class="ui grid">
-      <div class="three column row">
-        <div class="column">
-          <h1 class="ui header">Heading</h1>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Fusce
-            dapibus, tellus ac cursus commodo, tortor mauris condimentum
-            nibh, ut fermentum massa justo sit amet risus. Etiam porta
-            sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-          <button class="ui small basic button">
-            View detailes &raquo;
-          </button>
-        </div>
-        <div class="column">
-          <h1 class="ui header">Heading</h1>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Fusce
-            dapibus, tellus ac cursus commodo, tortor mauris condimentum
-            nibh, ut fermentum massa justo sit amet risus. Etiam porta
-            sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-          <button class="ui small basic button">
-            View detailes &raquo;
-          </button>
-        </div>
-        <div class="column">
-          <h1 class="ui header">Heading</h1>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Fusce
-            dapibus, tellus ac cursus commodo, tortor mauris condimentum
-            nibh, ut fermentum massa justo sit amet risus. Etiam porta
-            sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-          <button class="ui small basic button">
-            View detailes &raquo;
-          </button>
-        </div>
-      </div>
-      </div>
-
 
     <div class="ui inverted vertical footer segment" style="margin-top: 60px">
       <div class="ui container">
@@ -208,17 +135,6 @@
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
 
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $(".photo-carousel").slick({
-          infinite: true,
-          speed: 300,
-          slidesToShow: 1,
-          centerMode: true,
-          variableWidth: true,
-          autoplay: true,
-        });
-      });
-    </script>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eius beatae perspiciatis repellendus dolor, laudantium obcaecati voluptas recusandae placeat molestias ullam assumenda aliquid debitis eligendi deserunt facere distinctio ducimus? Praesentium!</p>
   </body>
 </html>
