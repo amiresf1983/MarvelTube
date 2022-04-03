@@ -1,8 +1,8 @@
 $("document").ready(init);
 
-var video = ''
+var video = "";
 
-var videos = $()
+var videos = $();
 
 function init() {
   var API_KEY = "AIzaSyBYuxS3gWRGJhvRH2pxLRJXODm9MPu8j_g";
@@ -26,12 +26,33 @@ function videoSearch(key, search, maxResults) {
     search;
 
   $.get(url, function (data) {
-    console.log(data);
+    // console.log(data);
+    displayVideos(data);
   });
 }
 
-function display( )
+function displayVideos(data) {
+  $("#search").val("");
 
+  var videoData = "";
+  data.items.forEach((item) => {
+    videoData = `
+                  
+                  <tr>
+                  <td>
+                  <a target="_blank" href="https://www.youtube.com/watch?v=${item.id.videoId}">
+                  ${item.snippet.title}</td>
+                  <td>
+                  <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
+                  </td>
+                  <td>
+                  
+                  
+                  </tr>
 
+                  `;
 
-//network tab
+    $("#videos").append(videoData);
+  });
+  console.log(videoData);
+}
