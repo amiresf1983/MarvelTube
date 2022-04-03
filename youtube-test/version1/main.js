@@ -9,7 +9,7 @@ function init() {
 
   $("#search-form").submit(function (event) {
     event.preventDefault();
-    // console.log("form-group");
+    console.log("form-group");
 
     var search = $("#search").val();
     videoSearch(API_KEY, search, 5);
@@ -25,8 +25,9 @@ function videoSearch(key, search, maxResults) {
     "&q=" +
     search;
 
-  $.get("url", function (data) {
-    console.log(data);
+  $.get(url, function (data) {
+    // console.log(data);
+    displayVideos(data);
   });
 }
 
@@ -51,7 +52,7 @@ function displayVideos(data) {
 
                   `;
 
-    $("#results").append(videoData);
+    $("#videos").append(videoData);
   });
   console.log(videoData);
 }
