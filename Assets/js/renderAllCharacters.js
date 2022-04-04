@@ -89,7 +89,10 @@ function renderAllCharacterImage(searchResult, container) {
       card.classList = 'ui raised link card';
       var aLink = document.createElement("a");
       aLink.classList = 'image';
-      aLink.setAttribute("href", "details.html");
+      aLink.setAttribute("alt", name);
+      aLink.setAttribute("href", "details.html?character="+name.replace(/\s/g, '')); //create HTML removing all spaces in the name
+      aLink.setAttribute("data-img", imgUrl);
+      aLink.setAttribute("data-bio", searchResult.description);
       var characterImage = document.createElement("img")
       characterImage.setAttribute("src", imgUrl)
       aLink.appendChild(characterImage)
