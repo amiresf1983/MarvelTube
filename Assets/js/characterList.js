@@ -1,11 +1,7 @@
 
 var marvelCharacters=[
 "Captain America",
-"Iron man",
-"Thor", 
-"Hulk",
 "Spider-Man",
-"Wolverine",
 "Deadpool",
 "Daredevil",
 "Doctor Strange",
