@@ -21,7 +21,7 @@ function searchForCharacter(searchInput) {
     charactercontainerE1.removeChild(charactercontainerE1.firstChild);
   }
 
-  fetch(apiUrl).then(function (response) {
+  fetch(apiUrl, {cache: 'force-cache'}).then(function (response) {
     if (response.ok) {
       response.json().then(function (charCards) {
         if (charCards.data.total > 0) {
@@ -51,12 +51,12 @@ function getAllCharacterImage(marvelCharacter, container) {
   //var requestUrl = 'http://gateway.marvel.com/v1/public/characters?name=' + marvelCharacters[i] + '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash='+ md5;
   var requestUrl = baseFetchURL + 'name=' + marvelCharacter + authParam;
   // console.log(requestUrl);
-  fetch(requestUrl).then(function (response) {
+  fetch(requestUrl, {cache: 'force-cache'}).then(function (response) {
     if (response.ok) {
       return response.json().then(function (charCards) {
         if (charCards) {
           // returns the array of results
-          console.log(charCards.data.results[0]);
+          // console.log(charCards.data.results[0]);
           renderAllCharacterImage(charCards.data.results[0], container)
         } else {
           showModalAlert('Nothing to show');
@@ -74,13 +74,13 @@ function renderAllCharacterImage(searchResult, container) {
   if (searchResult) {
     var imgUrl = searchResult.thumbnail.path + "/" + imgSize + "." + searchResult.thumbnail.extension
     var name = searchResult.name
-    console.log(imgUrl)
-    console.log(name)
+    // console.log(imgUrl)
+    // console.log(name)
     var imgPath = searchResult.thumbnail.path
     var myImgStatus = imgPath.split("/");
     var imgNotAvailable = myImgStatus[10]
-    console.log(imgNotAvailable)
-    console.log(myImgStatus)
+    // console.log(imgNotAvailable)
+    // console.log(myImgStatus)
     if (imgNotAvailable != "image_not_available") {
 
       var column = document.createElement("div");
