@@ -1,20 +1,22 @@
 $("document").ready(init);
 
 var video = "";
-
 var videos = $();
-
+var API_KEY = "AIzaSyB9Os5jr2rvfR85lNBk06y4o7wCamOMrgM";
 function init() {
-  var API_KEY = "AIzaSyBYuxS3gWRGJhvRH2pxLRJXODm9MPu8j_g";
-
-  $("#search-form").submit(function (event) {
-    event.preventDefault();
-    console.log("form-group");
-
-    var search = $("#search").val();
-    videoSearch(API_KEY, search, 5);
-  });
+  try {
+    searchTerm = JSON.parse(localStorage.getItem("search_key")) || "";
+    $("#search-form").trigger("submit");
+  } catch (error) {
+    console.log(error);
+  }
 }
+$("#search-form").submit(function (event) {
+  event.preventDefault();
+  console.log("form-group");
+  var search = $("#search").val() || searchTerm;
+  videoSearch(API_KEY, search, 5);
+});
 //hoisting
 function videoSearch(key, search, maxResults) {
   var url =
@@ -33,25 +35,28 @@ function videoSearch(key, search, maxResults) {
 
 function displayVideos(data) {
   $("#search").val("");
-
   var videoData = "";
   data.items.forEach((item) => {
+    // videoData = `
+    //               <tr>
+    //               <td>
+    //               <a target="_blank" href="https://www.youtube.com/watch?v=${item.id.videoId}">
+    //               ${item.snippet.title}
+    //               <br></td>
+    //               <td>
+
+    //               <iframe width="640" height="360" src="${item.snippet.thumbnails.high.url}" frameborder="0" allowfullscreen></iframe>
+
+    //               </td>
+    //               <td>
+    //               </tr>
+    //               `;
     videoData = `
-                  
-                  <tr>
-                  <td>
-                  <a target="_blank" href="https://www.youtube.com/watch?v=${item.id.videoId}">
-                  ${item.snippet.title}</td>
-                  <td>
-                  <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
-                  </td>
-                  <td>
-                  
-                  
-                  </tr>
-
-                  `;
-
+    <a target="_blank" href="https://www.youtube.com/watch?v=${item.id.videoId}">
+    ${item.snippet.title}
+    <br>
+    <iframe width="640" height="360" src="${item.snippet.thumbnails.high.url}" frameborder="0" allowfullscreen></iframe> 
+    <br>`;
     $("#videos").append(videoData);
   });
   console.log(videoData);
