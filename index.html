@@ -32,9 +32,18 @@
         <div class="row">
           <div class="column">
             <div class="item">
-
-              <a class="ui red button ">Register/Login</a>
-
+              <a id="login-btn" class="ui red button ">Register</a>
+              <form class="ui modal form">
+                <div class="field" style="margin:20px">
+                  <label>Email</label>
+                  <input type="text" id="Email" name="Email" placeholder="Email">
+                </div>
+                <div class="field" style="margin:20px">
+                  <label>Password</label>
+                  <input type="text" id="Password" name="Password" placeholder="Password">
+                </div>
+                <button class="ui red button register" type="submit" style="margin:20px">Register</button>
+              </form>
             </div>
           </div>
           <div class="column">
@@ -114,8 +123,9 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- <script src="./Assets/js/script.js"></script>
   <script src="./Assets/js/renderSearchCharacter.js"></script> -->
-  <script src="./Assets/js/characterList.js"></script>
-  <script src="./Assets/js/renderAllCharacters.js"></script>
+  <!-- <script src="./Assets/js/characterList.js"></script> -->
+  <!-- <script src="./Assets/js/renderAllCharacters.js"></script> -->
+  <script src="./Assets/js/loginForm.js"></script>
 
 
 </body>
