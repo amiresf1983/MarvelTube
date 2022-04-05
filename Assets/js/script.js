@@ -1,99 +1,113 @@
-// var bodyContentEl = $('body');
-// var inputEl = $('.right.item');
-// // API parameters
-// var authParam = 'ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7';
-// var baseFetchURL = 'http://gateway.marvel.com/v1/public/';
+var bodyContentEl = $("body");
+var inputEl = $("#marvel_search");
+// API parameters
+var authParam =
+  "ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7";
+var baseFetchURL = "http://gateway.marvel.com/v1/public/";
 
-// function getCharacters() {
-//     // Gets first 5 characters alphabetically
-//     var apiUrl = baseFetchURL + 'characters?limit=5&' + authParam;
-    
-//     fetch(apiUrl).then(function (response) {
-//         if (response.ok) {
-//             return response.json().then(function (charCards) {
-//                 if (charCards) {
-//                     // returns the array of results
-//                     // change this with function for rendering featured characters
-//                     console.log(charCards.data.results);
-//                 } else {
-//                     showModalAlert('Nothing to show');
-//                     return;
-//                 }
-//             });
-//         } else {
-//             showModalAlert("Error in URL");
-//         }
-//     });
-// }
+function getCharacters() {
+  // Gets first 5 characters alphabetically
+  var apiUrl = baseFetchURL + "characters?limit=5&" + authParam;
 
-// getCharacters();
+  fetch(apiUrl).then(function (response) {
+    if (response.ok) {
+      return response.json().then(function (charCards) {
+        if (charCards) {
+          // returns the array of results
+          // change this with function for rendering featured characters
+          console.log(charCards.data.results);
+        } else {
+          showModalAlert("Nothing to show");
+          return;
+        }
+      });
+    } else {
+      showModalAlert("Error in URL");
+    }
+  });
+}
 
-// function searchForCharacter(searchInput) {
-//     //search for character whose name starts with searchInput
-//     var apiUrl = baseFetchURL + 'characters?limit=100&nameStartsWith=' + searchInput +'&'+ authParam;
+getCharacters();
 
-//     fetch(apiUrl).then(function (response) {
-//         if (response.ok) {
-//             response.json().then(function (charCards) {
-//                 if (charCards.data.total > 0) {
-//                     // returns the array of results
-//                     // change this with funtion for rendering search result
-//                     console.log(charCards.data);
-//                 } else {
-//                     showModalAlert('Character ' + searchInput + ' is not found');
-//                     return;
-//                 }
-//             });   
-//         } else {
-//             showModalAlert("Character " + searchInput + " was not found.");
-//         }
-//     })
-//     //display name,bio&img 
-//     //repoEl.setAttribute('href', './search.html?character=' + repoName);
-//     //on search page
-//     //var queryString = document.location.search;
-//     //var repoName = queryString.split('=')[1];
-// }
+function searchForCharacter(searchInput) {
+  //search for character whose name starts with searchInput
+  var apiUrl =
+    baseFetchURL +
+    "characters?limit=100&nameStartsWith=" +
+    searchInput +
+    "&" +
+    authParam;
 
-// function showModalAlert(message) {
-//     // create modal for error message
-//     var modalEl = $('<div>');
-//     modalEl.addClass('ui mini modal');
-    
-//     var modalHeader = $('<div>');
-//     modalHeader.addClass('header');
-//     modalHeader.text('Invalid Query');
+  fetch(apiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (charCards) {
+        if (charCards.data.total > 0) {
+          // returns the array of results
+          // change this with funtion for rendering search result
+          console.log(charCards.data);
+        } else {
+          showModalAlert("Character " + searchInput + " is not found");
+          return;
+        }
+      });
+    } else {
+      showModalAlert("Character " + searchInput + " was not found.");
+    }
+  });
+  //display name,bio&img
+  //repoEl.setAttribute('href', './search.html?character=' + repoName);
+  //on search page
+  //var queryString = document.location.search;
+  //var repoName = queryString.split('=')[1];
+}
 
-//     var modalContent = $('<div>');
-//     modalContent.addClass('content');
+function showModalAlert(message) {
+  // create modal for error message
+  var modalEl = $("<div>");
+  modalEl.addClass("ui mini modal");
 
-//     var modalContentp = $('<p>');
-//     modalContentp.text(message);
-//     modalContent.append(modalContentp);
-//     modalEl.append(modalHeader, modalContent);
-    
-//     var modalActions = $('<div>');
-//     modalActions.addClass('actions');
+  var modalHeader = $("<div>");
+  modalHeader.addClass("header");
+  modalHeader.text("Invalid Query");
 
-//     var modalOKButton = $('<div>');
-//     modalOKButton.addClass('ui positive button');
-//     modalOKButton.text(' Okay ');
+  var modalContent = $("<div>");
+  modalContent.addClass("content");
 
-//     modalActions.append(modalOKButton);
-//     modalEl.append(modalActions);
-//     bodyContentEl.append(modalEl);
+  var modalContentp = $("<p>");
+  modalContentp.text(message);
+  modalContent.append(modalContentp);
+  modalEl.append(modalHeader, modalContent);
 
-//     // call modal to be shown.
-//     $('.ui.mini.modal').modal('show');
-// }
+  var modalActions = $("<div>");
+  modalActions.addClass("actions");
 
-// function formSubmitHandler(event) {
-//     // event handler when enter is pressed for submitting the form
-//     event.preventDefault();
-//     var charName = $('input').val();
-//     if (charName) {
-//         searchForCharacter(charName);
-//     }
-// }
+  var modalOKButton = $("<div>");
+  modalOKButton.addClass("ui positive button");
+  modalOKButton.text(" Okay ");
 
-// inputEl.on('click', formSubmitHandler);
+  modalActions.append(modalOKButton);
+  modalEl.append(modalActions);
+  bodyContentEl.append(modalEl);
+
+  // call modal to be shown.
+  $(".ui.mini.modal").modal("show");
+}
+
+function formSubmitHandler(event) {
+  // event handler when enter is pressed for submitting the form
+  event.preventDefault();
+  var charName = $("input").val();
+  if (charName) {
+    searchForCharacter(charName);
+  }
+}
+try {
+  localStorage.setItem("search_key", JSON.stringify(charName));
+} catch (error) {
+  console.log(error);
+}
+if (charName) {
+  searchForCharacter(charName);
+}
+
+inputEl.on("submit", formSubmitHandler);
