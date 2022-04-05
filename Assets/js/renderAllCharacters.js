@@ -2,6 +2,7 @@
 var md5 = "dbeab4e38fe46f41509e6c03584fabda"
 var authParam = '&ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7';
 var baseFetchURL = 'http://gateway.marvel.com/v1/public/characters?';
+
 var bodyContentEl = $('body');
 var inputEl = $('.ui.large.form');
 var character = document.getElementById("character");
@@ -17,14 +18,15 @@ function searchForCharacter(searchInput) {
   //search for character whose name starts with searchInput
   var apiUrl = baseFetchURL + 'limit=100&nameStartsWith=' + searchInput + authParam;
 
-  while (charactercontainerE1.firstChild) {
-    charactercontainerE1.removeChild(charactercontainerE1.firstChild);
-  }
-
   fetch(apiUrl, {cache: 'force-cache'}).then(function (response) {
-    if (response.ok) {
+    if (response.status === 200) {
       response.json().then(function (charCards) {
         if (charCards.data.total > 0) {
+          // only clear images below the search bar if there's a valid result
+          while (charactercontainerE1.firstChild) {
+            charactercontainerE1.removeChild(charactercontainerE1.firstChild);
+          }
+        
           // returns the array of results
           for (var i = 0; i < charCards.data.count; i++) {
             //function to render the image found for the character searched in the form
@@ -36,23 +38,17 @@ function searchForCharacter(searchInput) {
         }
       });
     } else {
-      showModalAlert("Character " + searchInput + " was not found.");
+      showModalAlert("API Request Failed");
     }
   })
-  //display name,bio&img 
-  //repoEl.setAttribute('href', './search.html?character=' + repoName);
-  //on search page
-  //var queryString = document.location.search;
-  //var repoName = queryString.split('=')[1];
 }
 
 function getAllCharacterImage(marvelCharacter, container) {
   // fetch request gets a list of all the repos for the node.js organization
   //var requestUrl = 'http://gateway.marvel.com/v1/public/characters?name=' + marvelCharacters[i] + '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash='+ md5;
   var requestUrl = baseFetchURL + 'name=' + marvelCharacter + authParam;
-  // console.log(requestUrl);
   fetch(requestUrl, {cache: 'force-cache'}).then(function (response) {
-    if (response.ok) {
+    if (response.status === 200) {
       return response.json().then(function (charCards) {
         if (charCards) {
           // returns the array of results
@@ -64,7 +60,7 @@ function getAllCharacterImage(marvelCharacter, container) {
         }
       });
     } else {
-      showModalAlert("Error in URL");
+      showModalAlert("API Request Failed");
     }
   });
 }
@@ -100,17 +96,6 @@ function renderAllCharacterImage(searchResult, container) {
       card.appendChild(characterName);
       column.appendChild(card);
       container.appendChild(column)
-
-      // var imgNameBtn = document.createElement("button")
-      // container.appendChild(characterImage)
-      // container.appendChild(imgNameBtn)
-      // imgNameBtn.innerHTML = name + "<br>"
-      // imgNameBtn.setAttribute("style", "padding:10px")
-      // container.setAttribute("style", "display=block")
-      // characterImage.setAttribute("src", imgUrl)
-      // characterImage.setAttribute("style", "padding:10px")
-      // imgNameBtn.appendChild(characterImage)
-      // console.log(characterImage)
     } else {
       //image not available
     }
