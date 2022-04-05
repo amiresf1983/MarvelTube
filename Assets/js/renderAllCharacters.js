@@ -1,6 +1,6 @@
 
 var md5 = "dbeab4e38fe46f41509e6c03584fabda"
-var authParam = '&ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7';
+var authParam = '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash=' + md5;
 var baseFetchURL = 'http://gateway.marvel.com/v1/public/characters?';
 var bodyContentEl = $('body');
 var inputEl = $('.ui.large.form');
@@ -21,7 +21,7 @@ function searchForCharacter(searchInput) {
     charactercontainerE1.removeChild(charactercontainerE1.firstChild);
   }
 
-  fetch(apiUrl, {cache: 'force-cache'}).then(function (response) {
+  fetch(apiUrl, { cache: 'force-cache' }).then(function (response) {
     if (response.ok) {
       response.json().then(function (charCards) {
         if (charCards.data.total > 0) {
@@ -51,7 +51,7 @@ function getAllCharacterImage(marvelCharacter, container) {
   //var requestUrl = 'http://gateway.marvel.com/v1/public/characters?name=' + marvelCharacters[i] + '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash='+ md5;
   var requestUrl = baseFetchURL + 'name=' + marvelCharacter + authParam;
   // console.log(requestUrl);
-  fetch(requestUrl, {cache: 'force-cache'}).then(function (response) {
+  fetch(requestUrl, { cache: 'force-cache' }).then(function (response) {
     if (response.ok) {
       return response.json().then(function (charCards) {
         if (charCards) {
@@ -90,7 +90,7 @@ function renderAllCharacterImage(searchResult, container) {
       var aLink = document.createElement("a");
       aLink.classList = 'image';
       aLink.setAttribute("alt", name);
-      aLink.setAttribute("href", "details.html?character="+name.replace(/\s/g, '')); //create HTML removing all spaces in the name
+      aLink.setAttribute("href", "details.html?character=" + name.replace(/\s/g, '')); //create HTML removing all spaces in the name
       aLink.setAttribute("data-img", imgUrl);
       aLink.setAttribute("data-bio", searchResult.description);
       var characterImage = document.createElement("img")
