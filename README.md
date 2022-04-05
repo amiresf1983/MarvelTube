@@ -31,3 +31,5 @@ The following animations show the web application's appearance and functionality
 
 - Add a pop-up when hovering the images that shows the bio of each
 - Save the recently searched character based on the login used
+- Include additional API’s
+   - Wikipedia for more character information as the Marvel API’s bio is short
