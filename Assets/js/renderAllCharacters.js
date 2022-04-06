@@ -1,6 +1,7 @@
-
 var md5 = "bbdca2a1904002b1309adc542b9a47c0";
-var authParam = "&ts=1&apikey=04e446d1e7466ef21854997335760863&hash=" + md5;
+var authParam =
+  "&ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7";
++md5;
 var baseFetchURL = "http://gateway.marvel.com/v1/public/characters?";
 var bodyContentEl = $("body");
 var inputEl = document.querySelector("#marvel_character_search button");
@@ -12,17 +13,15 @@ var charactercontainerE1 = document.getElementById("character-container");
 var featureCharacters = document.getElementById("feature-characters");
 var imgSize = "portrait_xlarge";
 var mostPopularCharacters = ["Thor", "Hulk", "Wolverine", "Iron Man"];
-var imgContainerEl = $('.ui.four.column.grid');
+var imgContainerEl = $(".ui.four.column.grid");
 
 function searchForCharacter(searchInput) {
   //search for character whose name starts with searchInput
   var apiUrl =
     baseFetchURL + "limit=100&nameStartsWith=" + searchInput + authParam;
 
-
-  fetch(apiUrl, { cache: 'force-cache' }).then(function (response) {
+  fetch(apiUrl, { cache: "force-cache" }).then(function (response) {
     if (response.status === 200) {
-
       response.json().then(function (charCards) {
         console.log({ charCards });
         if (charCards.data.total > 0) {
@@ -47,20 +46,17 @@ function searchForCharacter(searchInput) {
     } else {
       showModalAlert("API Request Failed");
     }
-
-  })
-
+  });
 }
 
 function getAllCharacterImage(marvelCharacter, container) {
   // fetch request gets a list of all the repos for the node.js organization
   //var requestUrl = 'http://gateway.marvel.com/v1/public/characters?name=' + marvelCharacters[i] + '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash='+ md5;
 
-  var requestUrl = baseFetchURL + 'name=' + marvelCharacter + authParam;
+  var requestUrl = baseFetchURL + "name=" + marvelCharacter + authParam;
 
-  fetch(requestUrl, { cache: 'force-cache' }).then(function (response) {
+  fetch(requestUrl, { cache: "force-cache" }).then(function (response) {
     if (response.status === 200) {
-
       return response.json().then(function (charCards) {
         if (charCards) {
           // returns the array of results
@@ -116,7 +112,7 @@ function renderAllCharacterImage(searchResult, container) {
       card.appendChild(aLink);
       card.appendChild(characterName);
       column.appendChild(card);
-      container.appendChild(column)
+      container.appendChild(column);
     } else {
       //image not available
     }
@@ -179,13 +175,13 @@ console.log({ inputEl });
 //inputEl.on("submit", allFormSubmitHandler);
 inputEl.addEventListener("click", allFormSubmitHandler);
 
-imgContainerEl.on('click', function (event) {
+imgContainerEl.on("click", function (event) {
   var target = $(event.target); //img
   var attr = $(target).parent();
   clickedChar = {
-    name: $(target).attr('alt'),
-    img: $(attr).attr('data-img'),
-    bio: $(attr).attr('data-bio')
-  }
-  localStorage.setItem('search_key', JSON.stringify(clickedChar));
-})
+    name: $(target).attr("alt"),
+    img: $(attr).attr("data-img"),
+    bio: $(attr).attr("data-bio"),
+  };
+  localStorage.setItem("search_key", JSON.stringify(clickedChar));
+});
