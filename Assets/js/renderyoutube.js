@@ -4,86 +4,6 @@ var searchKey = {};
 var videos = $();
 // var API_KEY = "AIzaSyB9Os5jr2rvfR85lNBk06y4o7wCamOMrgM";
 var API_KEY = "AIzaSyAkrMmNdavnKlZvW1vfVertGaylV7ucj2c";
-// var data = {
-//   "kind": "youtube#searchListResponse",
-//   "etag": "VPVv_bvzUtU0Aah2rgvdLIpyrqU",
-//   "nextPageToken": "CAIQAA",
-//   "regionCode": "AU",
-//   "pageInfo": {
-//     "totalResults": 1000000,
-//     "resultsPerPage": 2
-//   },
-//   "items": [
-//     {
-//       "kind": "youtube#searchResult",
-//       "etag": "pMcUcwPN6hFMHbW1ocdxdDHbqLk",
-//       "id": {
-//         "kind": "youtube#video",
-//         "videoId": "xjDjIWPwcPU"
-//       },
-//       "snippet": {
-//         "publishedAt": "2017-10-16T13:00:07Z",
-//         "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
-//         "title": "Marvel Studios&#39; Black Panther - Official Trailer",
-//         "description": "Long live the king. Watch the new trailer for Marvel Studios #BlackPanther. In theaters February 16! ▻ Subscribe to Marvel: ...",
-//         "thumbnails": {
-//           "default": {
-//             "url": "https://i.ytimg.com/vi/xjDjIWPwcPU/default.jpg",
-//             "width": 120,
-//             "height": 90
-//           },
-//           "medium": {
-//             "url": "https://i.ytimg.com/vi/xjDjIWPwcPU/mqdefault.jpg",
-//             "width": 320,
-//             "height": 180
-//           },
-//           "high": {
-//             "url": "https://i.ytimg.com/vi/xjDjIWPwcPU/hqdefault.jpg",
-//             "width": 480,
-//             "height": 360
-//           }
-//         },
-//         "channelTitle": "Marvel Entertainment",
-//         "liveBroadcastContent": "none",
-//         "publishTime": "2017-10-16T13:00:07Z"
-//       }
-//     },
-//     {
-//       "kind": "youtube#searchResult",
-//       "etag": "5V9n_gIgmSUN5cwURT9DAVLDXcY",
-//       "id": {
-//         "kind": "youtube#video",
-//         "videoId": "ry8e5ldzLDQ"
-//       },
-//       "snippet": {
-//         "publishedAt": "2018-03-16T17:09:35Z",
-//         "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
-//         "title": "Marvel Knights Animation - Black Panther - Episode 1",
-//         "description": "At a White House briefing, a history of the African nation of Wakanda is given. Highlighted are an early story of an attack by ...",
-//         "thumbnails": {
-//           "default": {
-//             "url": "https://i.ytimg.com/vi/ry8e5ldzLDQ/default.jpg",
-//             "width": 120,
-//             "height": 90
-//           },
-//           "medium": {
-//             "url": "https://i.ytimg.com/vi/ry8e5ldzLDQ/mqdefault.jpg",
-//             "width": 320,
-//             "height": 180
-//           },
-//           "high": {
-//             "url": "https://i.ytimg.com/vi/ry8e5ldzLDQ/hqdefault.jpg",
-//             "width": 480,
-//             "height": 360
-//           }
-//         },
-//         "channelTitle": "Marvel Entertainment",
-//         "liveBroadcastContent": "none",
-//         "publishTime": "2018-03-16T17:09:35Z"
-//       }
-//     }
-//   ]
-// };
 
 function init() {
   try {
@@ -138,7 +58,7 @@ function videoSearch(key, search, maxResults) {
     search;
 
   $.get(url, function (data) {
-    // console.log(data);
+    console.log(data);
     displayVideos(data);
 
     var tag = document.createElement("script");

@@ -28,14 +28,13 @@
 <body>
 
   <!-- https://semantic-ui.com/elements/divider.html  they have a sematic login -->
-  <nav id="nav">
-    <div class="ui large three item top menu inverted transition visible" style="display: flex !important; margin: 0;">
-      <div class="ui container ">
-        <div class="ui three column grid" style="width: 100%">
-          <div class="row">
-            <div class="column">
-              <div class="item">
-                <a id="login-btn" class="ui red button ">Register</a>
+  <div class="ui inverted centered vertical masthead center aligned segment">
+    <div class="ui container">
+      <div class="ui three column grid container">
+        <div class="row">
+          <div class="column">
+            <div class="item">
+              <a id="login-btn" class="ui red button ">Register</a>
                 <form class="ui modal form">
                   <div class="field" style="margin:20px">
                     <label>Email</label>
@@ -47,35 +46,25 @@
                   </div>
                   <button class="ui red button register" type="submit" style="margin:20px">Register</button>
                 </form>
-              </div>
             </div>
-            <div class="column">
-              <div class="item"></div>
+          </div>
+          <div class="column">
+            <div class="ui large secondary inverted pointing menu">
+              <a class="active item" href="index.html">Home</a>    
+              <a class="item" href="details.html">Character</a>
             </div>
-            <div class="column">
-            </div>
+          </div>
+          <div class="column">
           </div>
         </div>
       </div>
     </div>
-
-
-    <div class="ui top menu transition inverted visible" style="margin: 0">
-      <div class="ui container" style="justify-content: center">
-        <a class="item" href="index.html">Home</a>
-
-        <a class="item" href="details.html">Character</a>
-      </div>
-    </div>
-    </a>
-  </nav>
-  <img class="ui massive image" src="Assets/img/banner/m-character.png" style="width: 100%; height:60%">
-
   </div>
+  <img class="ui massive image" src="Assets/img/banner/m-character.png" style="width: 100%; height:60%">
 
   <div class="ui container" style="margin-top: 60px">
     <h2 class="ui block header">Feature Characters</h2>
-    <div class="ui four column grid">
+    <div class="ui four column stackable grid">
       <div class="row" id="feature-characters"></div>
     </div>
   </div>
@@ -89,15 +78,16 @@
     </form>
   </div>
   <div class="ui container" style="margin-top: 60px">
-    <h2 class="ui block header">All Marvel Characters</h2>
-    <div class="ui four column grid">
+    <h2 class="ui block header search-res">All Marvel Characters</h2>
+    <div class="ui four column stackable grid">
       <div class="row" id="character-container"></div>
     </div>
   </div>
 
   <div class="ui inverted vertical footer segment" style="margin-top: 60px">
     <div class="ui container">
-      Data provided by Marvel. © 2014 Marvel
+      
+      <h5>Data provided by Marvel. © 2014 Marvel</h5>
     </div>
   </div>
 
