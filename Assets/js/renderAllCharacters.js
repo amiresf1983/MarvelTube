@@ -1,7 +1,6 @@
 var md5 = "bbdca2a1904002b1309adc542b9a47c0";
 var authParam =
   "&ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7";
-+md5;
 var baseFetchURL = "http://gateway.marvel.com/v1/public/characters?";
 var bodyContentEl = $("body");
 var inputEl = document.querySelector("#marvel_character_search button");
@@ -179,9 +178,10 @@ imgContainerEl.on("click", function (event) {
   var target = $(event.target); //img
   var attr = $(target).parent();
   clickedChar = {
-    name: $(target).attr("alt"),
+    name: $(attr).attr("alt"),
     img: $(attr).attr("data-img"),
     bio: $(attr).attr("data-bio"),
   };
+  localStorage.setItem("render_search_key",JSON.stringify($(attr).attr("alt")))
   localStorage.setItem("search_key", JSON.stringify(clickedChar));
 });
