@@ -13,6 +13,7 @@ var featureCharacters = document.getElementById("feature-characters");
 var imgSize = "portrait_xlarge";
 var mostPopularCharacters = ["Thor", "Hulk", "Wolverine", "Iron Man"];
 var imgContainerEl = $(".ui.four.column.grid");
+var characterLabel = $(".search-res");
 
 function searchForCharacter(searchInput) {
   //search for character whose name starts with searchInput
@@ -28,7 +29,8 @@ function searchForCharacter(searchInput) {
           while (charactercontainerE1.firstChild) {
             charactercontainerE1.removeChild(charactercontainerE1.firstChild);
           }
-
+          // change header
+          characterLabel.text("Search results for " + searchInput);
           // returns the array of results
           for (var i = 0; i < charCards.data.count; i++) {
             //function to render the image found for the character searched in the form
