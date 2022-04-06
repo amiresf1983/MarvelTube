@@ -6,7 +6,7 @@
 
 As a Marvel fan, I want to search for Marvel content while utilising Youtube simultaneously, so that I can see videos and some information about the character I have searched in a single page.
 
-This is a web application that Integrates Youtube API and Marvel API to produce a simpler search experience. In this project, a user can either search for a Marvel character or click any of the pre-loaded images and the application would show several Youtube videos related to that selected character.
+This is a web application that Integrates Youtube API and Marvel API to produce a simpler character search experience. In this project, a user can either search for a Marvel character or click any of the pre-loaded images and the application would show several Youtube videos related to that selected character.
 
 Users can use the Register button on the top-left of the page, enter their email addresses and passwords, and the program would use localStorage to remember those details.
 
@@ -31,5 +31,8 @@ The following animations show the web application's appearance and functionality
 
 - Add a pop-up when hovering the images that shows the bio of each
 - Save the recently searched character based on the login used
+- Include the comic thumbnails and links in the search results
 - Include additional API’s
-   - Wikipedia for more character information as the Marvel API’s bio is short
+  - Wikipedia for more character information as the Marvel API’s bio is short
+  - IMDB for movie information
+  - Rotten Tomatoes for Critic and Audience Scores of movies
