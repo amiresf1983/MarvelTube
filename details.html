@@ -18,49 +18,38 @@
 
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-    />
+
 
     <link
       type="text/css"
       rel="stylesheet"
-      href="./assest/style.css/style.css"
+      href="./Assets/style.css/style.css"
     />
   </head>
   <body>
+    <nav id="nav">
     <div
       class="ui large three item top menu inverted transition visible"
-      style="display: flex !important; margin: 0;"
-      
-    >
+      style="display: flex !important; margin: 0;">
       <div class="ui container black ">
         <div class="ui three column grid" style="width: 100%">
           <div class="row">
             <div class="column">
               <div class="item">
-                <a class="ui red button " href="/register.html">Register/Login</a>
+                <a class="ui red button " href="/register.html">Register</a>
               </div>
             </div>
             <div class="column">
               <div class="item">
-              <img src="Assets/img/marvel-logo-2000.jpg"/>  
+              <!-- <img src="Assets/img/marvel-logo-2000.jpg"/>   -->
 
               </div>
             </div>
             <div class="column">
+              <!-- @desc 
+                   search bar -->
               <div class="right item">
                 <div class="ui icon input" style="width: 200px">
-             
                 </div>  
                   <input type="text" placeholder="Search..." />
                   <i class="search link icon"></i>
@@ -74,32 +63,36 @@
     <div class="ui top menu transition inverted visible" style="margin: 0;">
       <div class="ui container" style="justify-content: center;">
         <a class="item" href="index.html">Home</a>    
-        <a class="item" href="details.html">Character</a>
+        <a class="item" href="details.html">Exte</a>
             
             
         </div>
       </div>
     </div>
+    
+  </nav>
 
-    <!-- <div class="photo-carousel">
-      <div>
-        <p
-          style="
-            background-image: url('./assest/img/banner1.jpg');
-            height: 400px;
-            width: 100vw;
-            background-size: cover;
-            background-repeat: no-repeat;
-          "
-        ></p>
-      </div>
-    </div> -->
+  <img class="ui massive image" src="Assets/img/giphy.gif" style="width: 100%; height:60%">
 
-    <div class="ui internally celled grid" style="padding: 100px;">
+  
+    <div class="sixteen wide column">
+    </form id="form-comic" >
+      <div class="row" style="text-align: center; ">
+    <div id="videos" style="padding: 10px;"></div>
+</div>
+</div>
+
+<div class="selected-comic">
+  <h2>Selected Comic</h2>
+  <h3 id="selected_comic"></h2>
+  <div id="comic_image"></div>
+ </div>
+<div class="main-content" style="display: flex;">
+    <div class="ui internally celled" style="padding: 100px;">
         <div class="row">
           <div class="three wide column">
             <div class="container">
-              <h1>mini youtube</h1>
+              <h1>Youtube</h1>
               <form id="search-form">
                 <div class="form-group">
                   
@@ -116,23 +109,34 @@
           <div id="videos" style="padding: 10px;"></div>
       </div>
       </div>
-     
-
-
-    <div class="ui inverted vertical footer segment" style="margin-top: 60px">
-      <div class="ui container">
-        Data provided by Marvel. © 2014 Marvel
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
+    </div>
     </div>
 
+    
+   
+  <div class="comics-list-section">
+
+    <ul class="comics-list">
+
+    </ul>
+  </div>
+  </div>
+    <div class="ui inverted vertical footer segment" style="margin-top: 60px; text-align: center;">
+      <div class="ui container">
+        Data provided by Marvel. © 2014 Marvel</br> Data provided by Marvel. © 2014 Youtube  
+      </div>
+    </div>
+    
     <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="youtube-test/version1/main.js"></script>
-  <script src="Assets/js/renderyoutube.js"></script>
+    <script src="youtube-test/version1/main.js"></script>
+    <script src="Assets/js/renderyoutube.js"></script>
+ 
+<script src="Assets/js/renderSearchCharacter.js"></script>
+<script src="Assets/js/renderComic.js"></script>
 
 
   </body>
