@@ -33,7 +33,7 @@ function searchForCharacter(searchInput) {
   //search for character whose name starts with searchInput
   var apiUrl =
     baseFetchURL +
-    "characters?limit=100&nameStartsWith=" +
+    "characters?limit=5&nameStartsWith=" +
     searchInput +
     "&" +
     authParam;
@@ -100,14 +100,14 @@ function formSubmitHandler(event) {
   if (charName) {
     searchForCharacter(charName);
   }
-}
-try {
-  localStorage.setItem("search_key", JSON.stringify(charName));
-} catch (error) {
-  console.log(error);
-}
-if (charName) {
-  searchForCharacter(charName);
+  try {
+    localStorage.setItem("search_key", JSON.stringify(charName));
+  } catch (error) {
+    console.log(error);
+  }
+  if (charName) {
+    searchForCharacter(charName);
+  }
 }
 
 inputEl.on("submit", formSubmitHandler);

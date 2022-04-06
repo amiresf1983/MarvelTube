@@ -1,1 +1,40 @@
+.main-content {
+  display: flex;
+}
 
+.comics-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.comics-list li {
+  margin: 1rem;
+  width: 250px;
+  height: auto;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+
+.selected-comic {
+  text-align: center;
+}
+#nav {
+  background-color: #1b1c1d !important;
+}
+
+/* div#modal1 {
+  position: fixed;
+  border: solid;
+  left: 35%;
+  top: 20%;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* justify-content: center;} */
