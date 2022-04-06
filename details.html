@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarvelTube</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MarvelTube</title>
+    <!-- materialies CDN html link -->
+    <!-- Compiled and minified CSS -->
 
-  <!-- materialies CDN html link -->
-  <!-- Compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
 
-
-
-  <link type="text/css" rel="stylesheet" href="./Assets/style.css/style.css" />
-</head>
-
-<body>
-  <nav id="nav">
-    <div class="ui large three item top menu inverted transition visible" style="display: flex !important; margin: 0;">
+    <!-- <link
+      type="text/css"
+      rel="stylesheet"
+      href="./assest/style.css/style.css"
+    /> -->
+  </head>
+  <body>
+    <div class="ui large three item top menu inverted transition visible"
+      style="display: flex !important; margin: 0;">
       <div class="ui container black ">
         <div class="ui three column grid" style="width: 100%">
           <div class="row">
             <div class="column">
               <div class="item">
-                <a class="ui red button " href="/register.html">Register</a>
+                <a class="ui red button " href="/register.html">Register/Login</a>
               </div>
             </div>
             <div class="column">
               <div class="item">
-                <!-- <img src="./Assets/img/marvel-logo-2000.jpg"/>   -->
-
+                <!-- <img src="Assets/img/marvel-logo-2000.jpg"/>   -->
               </div>
             </div>
             <div class="column">
-              <!-- @desc 
-                   search bar -->
               <div class="right item">
                 <div class="ui icon input" style="width: 200px">
-                </div>
+             
+                </div>  
                 <input type="text" placeholder="Search..." />
                 <i class="search link icon"></i>
               </div>
@@ -52,84 +66,47 @@
         </div>
       </div>
     </div>
-    </div>
     <div class="ui top menu transition inverted visible" style="margin: 0;">
       <div class="ui container" style="justify-content: center;">
-        <a class="item" href="index.html">Home</a>
-        <a class="item" href="details.html">Exte</a>
-
-
+        <a class="item" href="index.html">Home</a>    
+        <a class="item" href="details.html">Character</a>  
+        </div>
       </div>
     </div>
-    </div>
 
-  </nav>
-
-  <img class="ui massive image" src="./Assets/img/giphy.gif" style="width: 100%; height:60%">
-
-
-  <div class="sixteen wide column">
-    </form id="form-comic">
-    <div class="row" style="text-align: center; ">
-      <div id="videos" style="padding: 10px;"></div>
-    </div>
-  </div>
-
-  <div class="selected-comic">
-    <h2>Selected Comic</h2>
-    <h3 id="selected_comic">
-      </h2>
-      <div id="comic_image"></div>
-  </div>
-  <div class="main-content" style="display: flex;">
-    <div class="ui internally celled" style="padding: 100px;">
+    <div class="ui centered internally celled grid" style="padding: 100px;">
       <div class="row">
-        <div class="three wide column">
+        <div class="five wide column">
           <div class="container">
-            <h1>Youtube</h1>
-            <form id="search-form">
-              <div class="form-group">
-
-                <input type="text" class="form-control" id="search" />
-
-
-                <input type="submit" class="btn btn-danger" id="search" />
-              </div>
+              <h1>mini youtube</h1>
+              <form id="search-form">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search" />                
+                  <input type="submit" class="btn btn-danger" id="search" />
+                </div>
+              </form id="form" >
           </div>
         </div>
-        <div class="thirteen wide column">
-          </form id="form">
+        <div class="eleven wide column">
           <div class="row" style="text-align: center; ">
-            <div id="videos" style="padding: 10px;"></div>
+            <div id="videos" style="padding: 10px;">
+            </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
 
-
-
-    <div class="comics-list-section">
-
-      <ul class="comics-list">
-
-      </ul>
-    </div>
-  </div>
-  <div class="ui inverted vertical footer segment" style="margin-top: 60px; text-align: center;">
-    <div class="ui container">
-      Data provided by Marvel. © 2014 Marvel</br> Data provided by Marvel. © 2014 Youtube
+    <div class="ui inverted vertical footer segment" style="margin-top: 60px">
+      <div class="ui container">
+        <p>Data provided by Marvel. © 2014 Marvel</p>
+        <img src="./Assets/img/developed-with-youtube-sentence-case-light.png" height="100px"/>
+      </div>
     </div>
   </div>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="youtube-test/version1/main.js"></script>
-  <script src="./Assets/js/renderyoutube.js"></script>
-
-  <script src="./Assets/js/renderSearchCharacter.js"></script>
-  <script src="./Assets/js/renderComic.js"></script>
-
-
-</body>
-
+    <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./Assets/js/renderyoutube.js"></script>
+  </body>
 </html>
