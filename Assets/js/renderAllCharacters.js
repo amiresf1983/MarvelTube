@@ -4,7 +4,6 @@ var authParam = "&ts=1&apikey=04e446d1e7466ef21854997335760863&hash=" + md5;
 var baseFetchURL = "http://gateway.marvel.com/v1/public/characters?";
 var bodyContentEl = $("body");
 var inputEl = document.querySelector("#marvel_character_search button");
-
 var character = document.getElementById("character");
 var characterSearch = document.getElementById("character-search");
 var characterFormEl = document.getElementById("character-form");
@@ -13,6 +12,7 @@ var charactercontainerE1 = document.getElementById("character-container");
 var featureCharacters = document.getElementById("feature-characters");
 var imgSize = "portrait_xlarge";
 var mostPopularCharacters = ["Thor", "Hulk", "Wolverine", "Iron Man"];
+var imgContainerEl = $('.ui.four.column.grid');
 
 function searchForCharacter(searchInput) {
   //search for character whose name starts with searchInput
@@ -20,7 +20,7 @@ function searchForCharacter(searchInput) {
     baseFetchURL + "limit=100&nameStartsWith=" + searchInput + authParam;
 
 
-  fetch(apiUrl, {cache: 'force-cache'}).then(function (response) {
+  fetch(apiUrl, { cache: 'force-cache' }).then(function (response) {
     if (response.status === 200) {
 
       response.json().then(function (charCards) {
@@ -30,7 +30,7 @@ function searchForCharacter(searchInput) {
           while (charactercontainerE1.firstChild) {
             charactercontainerE1.removeChild(charactercontainerE1.firstChild);
           }
-        
+
           // returns the array of results
           for (var i = 0; i < charCards.data.count; i++) {
             //function to render the image found for the character searched in the form
@@ -58,7 +58,7 @@ function getAllCharacterImage(marvelCharacter, container) {
 
   var requestUrl = baseFetchURL + 'name=' + marvelCharacter + authParam;
 
-  fetch(requestUrl, {cache: 'force-cache'}).then(function (response) {
+  fetch(requestUrl, { cache: 'force-cache' }).then(function (response) {
     if (response.status === 200) {
 
       return response.json().then(function (charCards) {
@@ -178,3 +178,14 @@ for (var i = 0; i < marvelCharacters.length; i++) {
 console.log({ inputEl });
 //inputEl.on("submit", allFormSubmitHandler);
 inputEl.addEventListener("click", allFormSubmitHandler);
+
+imgContainerEl.on('click', function (event) {
+  var target = $(event.target); //img
+  var attr = $(target).parent();
+  clickedChar = {
+    name: $(target).attr('alt'),
+    img: $(attr).attr('data-img'),
+    bio: $(attr).attr('data-bio')
+  }
+  localStorage.setItem('search_key', JSON.stringify(clickedChar));
+})
