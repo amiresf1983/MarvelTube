@@ -101,7 +101,7 @@ function renderAllCharacterImage(searchResult, container) {
       var aLink = document.createElement("a");
       aLink.classList = "image";
       aLink.setAttribute("alt", name);
-      aLink.setAttribute("href", "details.html?characterId=" + id); //create HTML removing all spaces in the name
+      aLink.setAttribute("href", "details.html?character="+name+"&characterId=" + id); //create HTML removing all spaces in the name
       aLink.setAttribute("data-img", imgUrl);
       aLink.setAttribute("data-bio", searchResult.description);
       var characterImage = document.createElement("img");
