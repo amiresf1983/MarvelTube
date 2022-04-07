@@ -1,101 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MarvelTube</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarvelTube</title>
 
-  <!-- materialies CDN html link -->
-  <!-- Compiled and minified CSS -->
+    <!-- materialies CDN html link -->
+    <!-- Compiled and minified CSS -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
 
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-  <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+  </head>
 
-  <link type="text/css" rel="stylesheet" href="./Assets/style.css/style.css" />
-</head>
-
-<body>
-
-  <!-- https://semantic-ui.com/elements/divider.html  they have a sematic login -->
-  <div class="ui inverted centered vertical masthead center aligned segment">
-    <div class="ui container">
-      <div class="ui three column grid container">
-        <div class="row">
-          <div class="column">
-            <div class="item">
-              <a id="login-btn" class="ui red button ">Register</a>
-                <form class="ui modal form">
-                  <div class="field" style="margin:20px">
-                    <label>Email</label>
-                    <input type="text" id="Email" name="Email" placeholder="Email">
-                  </div>
-                  <div class="field" style="margin:20px">
-                    <label>Password</label>
-                    <input type="text" id="Password" name="Password" placeholder="Password">
-                  </div>
-                  <button class="ui red button register" type="submit" style="margin:20px">Register</button>
-                </form>
+  <body>
+    <div class="ui inverted centered vertical masthead center aligned segment">
+      <div class="ui container">
+        <div class="ui three column grid container">
+          <div class="row">
+            <div class="column">
+              <div class="item">
+                <a id="login-btn" class="ui red button ">Register</a>
+                  <form class="ui modal form">
+                    <div class="field" style="margin:20px">
+                      <label>Email</label>
+                      <input type="text" id="Email" name="Email" placeholder="Email">
+                    </div>
+                    <div class="field" style="margin:20px">
+                      <label>Password</label>
+                      <input type="password" id="Password" name="Password" placeholder="Password">
+                    </div>
+                    <button class="ui red button register" type="submit" style="margin:20px">Register</button>
+                  </form>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div class="ui large secondary inverted pointing menu">
-              <a class="active item" href="./index.html">Home</a>    
-              <a class="item" href="./details.html">Character</a>
+            <div class="column">
+              <div class="ui large secondary inverted pointing menu">
+                <a class="active item" href="./index.html">Home</a>    
+                <a class="item" href="./details.html">Character</a>
+              </div>
             </div>
-          </div>
-          <div class="column">
+            <div class="column">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <img class="ui massive image" src="./Assets/img/banner/m-character.png" style="width: 100%; height:60%">
+    <img class="ui massive image" src="./Assets/img/banner/m-character.png" style="width: 100%; height:60%">
 
-  <div class="ui container" style="margin-top: 60px">
-    <h2 class="ui block header">Feature Characters</h2>
-    <div class="ui four column stackable grid">
-      <div class="row" id="feature-characters"></div>
-    </div>
-  </div>
-  <div class="ui container" style="margin: 40px">
-    <form class="ui large form" id="marvel_character_search">
-      <div class="field">
-        <label>Search for character</label>
-        <input type="text" placeholder="Character Name" id="search_character" />
+    <div class="ui container" style="margin-top: 60px">
+      <h2 class="ui block header">Feature Characters</h2>
+      <div class="ui four column stackable grid">
+        <div class="row" id="feature-characters"></div>
       </div>
-      <button class="ui button" type="submit">Submit</button>
-    </form>
-  </div>
-  <div class="ui container" style="margin-top: 60px">
-    <h2 class="ui block header search-res">All Marvel Characters</h2>
-    <div class="ui four column stackable grid">
-      <div class="row" id="character-container"></div>
     </div>
-  </div>
-
-  <div class="ui inverted vertical footer segment" style="margin-top: 60px">
-    <div class="ui container">
-      <h5>Data provided by Marvel. © 2014 Marvel</h5>
+    <div class="ui container" style="margin: 40px">
+      <form class="ui large form" id="marvel_character_search">
+        <div class="field">
+          <label>Search for character</label>
+          <input type="text" placeholder="Character Name" id="search_character" />
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+      </form>
     </div>
-  </div>
+    <div class="ui container" style="margin-top: 60px">
+      <h2 class="ui block header search-res">All Marvel Characters</h2>
+      <div class="ui four column stackable grid">
+        <div class="row" id="character-container"></div>
+      </div>
+    </div>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="./Assets/js/characterList.js"></script>
-  <script src="./Assets/js/loginForm.js"></script>
-  <script src="./Assets/js/renderSearchCharacter.js"></script>
-  <script src="./Assets/js/renderAllCharacters.js"></script>
+    <div class="ui inverted vertical footer segment" style="margin-top: 60px">
+      <div class="ui container">
+        <h5>Data provided by Marvel. © 2014 Marvel</h5>
+      </div>
+    </div>
 
-</body>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./Assets/js/characterList.js"></script>
+    <script src="./Assets/js/loginForm.js"></script>
+    <script src="./Assets/js/renderAllCharacters.js"></script>
+
+  </body>
 
 </html>
