@@ -1,7 +1,7 @@
 var md5 = "bbdca2a1904002b1309adc542b9a47c0";
 var authParam =
   "&ts=15&apikey=3da8b4beae1642dbdddd14a53749bc9f&hash=4ac0722f457be34b7bca71f7789eeff7";
-var baseFetchURL = "http://gateway.marvel.com/v1/public/characters?";
+var baseFetchURL = "https://gateway.marvel.com/v1/public/characters?";
 var bodyContentEl = $("body");
 var inputEl = document.querySelector("#marvel_character_search button");
 var character = document.getElementById("character");
@@ -52,7 +52,7 @@ function searchForCharacter(searchInput) {
 
 function getAllCharacterImage(marvelCharacter, container) {
   // fetch request gets a list of all the repos for the node.js organization
-  //var requestUrl = 'http://gateway.marvel.com/v1/public/characters?name=' + marvelCharacters[i] + '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash='+ md5;
+  //var requestUrl = 'https://gateway.marvel.com/v1/public/characters?name=' + marvelCharacters[i] + '&ts=1&apikey=22ae83f378d9dd859ac72de3da5d77de&hash='+ md5;
 
   var requestUrl = baseFetchURL + "name=" + marvelCharacter + authParam;
 
