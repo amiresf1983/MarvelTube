@@ -1,110 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MarvelTube</title>
 
-    <!-- materialies CDN html link -->
-    <!-- Compiled and minified CSS -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarvelTube</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- materialies CDN html link -->
+  <!-- Compiled and minified CSS -->
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
-    />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-    />
-  </head>
-  <body>
-    <div class="ui inverted centered vertical masthead center aligned segment">
-      <div class="ui container">
-        <div class="ui three column grid container">
-          <div class="row">
-            <div class="column">
-              <div class="item">
-                <a id="login-btn" class="ui red button ">Register</a>
-                <form class="ui modal form">
-                  <div class="field" style="margin:20px">
-                    <label>Email</label>
-                    <input type="text" id="Email" name="Email" placeholder="Email">
-                  </div>
-                  <div class="field" style="margin:20px">
-                    <label>Password</label>
-                    <input type="password" id="Password" name="Password" placeholder="Password">
-                  </div>
-                  <button class="ui red button register" type="submit" style="margin:20px">Register</button>
-                </form>
-              </div>
-            </div>
-            <div class="column">
-              <div class="ui large secondary inverted pointing menu">
-                <a class="item" href="./index.html">Home</a>    
-                <a class="active item" href="./details.html">Character</a>
-              </div> 
-            </div>
-            <div class="column">
-              <div class="right item">
-                <div class="ui icon input">
-                  <input type="text" placeholder="Search..." />
-                  <i class="search icon"></i>             
-                </div>  
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
 
-    <h3 class="ui center aligned header"></h3>
-    <div class="ui stackable two column divided grid container">
-      <div class="row">
-        <div class="five wide column">
-          <div class="ui container">
-              <h1>mini youtube</h1>
-              <form id="search-form">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search" />                
-                  <input type="submit" class="btn btn-danger" id="search" />
+<body>
+  <div class="ui inverted centered vertical masthead center aligned segment">
+    <div class="ui container">
+      <div class="ui three column grid container">
+        <div class="row">
+          <div class="column">
+            <!-- <div class="item">
+              <a id="login-btn" class="ui red button ">Register</a>
+              <form class="ui modal form">
+                <div class="field" style="margin:20px">
+                  <label>Email</label>
+                  <input type="text" id="Email" name="Email" placeholder="Email">
                 </div>
-              </form id="form" >
+                <div class="field" style="margin:20px">
+                  <label>Password</label>
+                  <input type="password" id="Password" name="Password" placeholder="Password">
+                </div>
+                <button class="ui red button register" type="submit" style="margin:20px">Register</button>
+              </form>
+            </div> -->
           </div>
-        </div>
-        <div class="center aligned eleven wide column">
-          <div class="ui container">
-            <div id="videos">
+          <div class="column">
+            <div class="ui large secondary inverted pointing menu">
+              <a class="item" href="./index.html">Home</a>
+              <a class="active item" href="./details.html">Character</a>
             </div>
           </div>
-        </div>  
+          <div class="column">
+            <div class="right item">
+              <!-- <div class="ui icon input">
+                <input type="text" placeholder="Search..." />
+                <i class="search icon"></i>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <h3 class="ui center aligned header"></h3>
-    <div class="ui inverted vertical footer segment">
-      <div class="ui container">
-        <img class="ui middle aligned small image" src="./Assets/img/developed-with-youtube-sentence-case-light.png"/>
-        <h5>Data provided by Marvel. © 2014 Marvel</h5>
+  <h3 class="ui center aligned header"></h3>
+  <div class="ui stackable two column divided grid container">
+    <div class="row">
+      <div class="five wide column">
+        <div class="ui container">
+          <h1>mini youtube</h1>
+          <form id="search-form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="search" />
+              <input type="submit" class="btn btn-danger" id="search" />
+            </div>
+          </form id="form">
+        </div>
+      </div>
+      <div class="center aligned eleven wide column">
+        <div class="ui container">
+          <div id="videos">
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./Assets/js/loginForm.js"></script>
-    <script src="./Assets/js/renderyoutube.js"></script>
-  </body>
+
+  <h3 class="ui center aligned header"></h3>
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <img class="ui middle aligned small image" src="./Assets/img/developed-with-youtube-sentence-case-light.png" />
+      <h5>Data provided by Marvel. © 2014 Marvel</h5>
+
+    </div>
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./Assets/js/loginForm.js"></script>
+  <script src="./Assets/js/renderyoutube.js"></script>
+</body>
+
 </html>
