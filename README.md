@@ -18,7 +18,6 @@ The following animations show the web application's appearance and functionality
 
 ![MarvelTube Website Homepage](./Assets/img/MarvelTube.gif)
 
-![MarvelTube Website Search Results](./Assets/img/MarvelTube.gif)
 
 ## Features
 
